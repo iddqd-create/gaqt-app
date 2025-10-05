@@ -23,7 +23,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const telegramUser = validateTelegramWebAppData(initData, botToken);
+    // FIX: Add await here
+    const telegramUser = await validateTelegramWebAppData(initData, botToken);
     
     if (!telegramUser) {
       return NextResponse.json(
