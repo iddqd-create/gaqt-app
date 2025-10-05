@@ -17,6 +17,8 @@ export interface User {
   energy: number;
   points: number;
   level: number;
+  referral_code?: string;
+  referral_count?: number;
   last_sync: Date;
   created_at: Date;
 }
