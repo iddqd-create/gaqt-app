@@ -23,7 +23,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // FIX: Add await here
     const telegramUser = await validateTelegramWebAppData(initData, botToken);
     
     if (!telegramUser) {
@@ -80,9 +79,7 @@ export async function POST(request: NextRequest) {
         ton_wallet: user.ton_wallet,
         energy: user.energy,
         points: user.points,
-        level: user.level,
-        referral_code: user.referral_code,
-        referral_count: user.referral_count
+        level: user.level
       },
       referralBonus
     });
